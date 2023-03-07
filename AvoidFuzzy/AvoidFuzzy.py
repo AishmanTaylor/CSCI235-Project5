@@ -29,14 +29,14 @@ def AvoidFuzzy(robot):
     right_distance = robot.right_sonar.distance()
 
     front_close = lib.rising(front_distance, CLOSE, FAR)
-    left_wheel_close  = lib.defuzzify(front_close,  0, -SPEED)
-    right_wheel_close = lib.defuzzify(front_close, 0, -SPEED)
+    left_wheel_close  = lib.defuzzify(front_close,  0, SPEED)
+    right_wheel_close = lib.defuzzify(front_close, 0, SPEED)
     left_close  = lib.rising(left_distance,  CLOSE, FAR)
     left_wheel_left  = lib.defuzzify(left_close,  0, 0)
-    right_wheel_left = lib.defuzzify(left_close, 0, -SPEED)
+    right_wheel_left = lib.defuzzify(left_close, 0, SPEED)
     right_close = lib.rising(right_distance, CLOSE, FAR)
     left_wheel_right  = lib.defuzzify(right_close,  0, 0)
-    right_wheel_right = lib.defuzzify(right_close, 0, -SPEED)
+    right_wheel_right = lib.defuzzify(right_close, 0, [po[oo[o[SPEED)
     
     if (front_distance >= FAR) and (right_distance >= FAR) and (left_distance >= FAR):
         robot.left.run(SPEED)
